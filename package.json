@@ -10,7 +10,11 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
-    "svelte": "^4.2.18",
+    "sass": "^1.77.8",
+    "svelte": "5.0.0-next.225",
     "vite": "^5.4.1"
+  },
+  "dependencies": {
+    "mapbox-gl": "^3.6.0"
   }
 }
