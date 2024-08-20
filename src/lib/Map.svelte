@@ -245,11 +245,6 @@
         color: #fff;
       }
     }
-    @media screen and (min-width: vars.$lg) {
-      form {
-        width: 50%;
-      }
-    }
   }
   .addressForm {
     width: 100%;
@@ -257,8 +252,12 @@
     input {
       display: block;
       margin: 1rem auto;
+      width: 95%;
 
       font-size: 1.2rem;
+      @media screen and (min-width: vars.$lg) {
+        width: 75%;
+      }
     }
   }
 </style>
