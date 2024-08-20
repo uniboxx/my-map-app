@@ -1,13 +1,15 @@
 <script>
   import { Map, NavigationControl } from 'mapbox-gl';
   import Spinner from './Spinner.svelte';
+  import { token } from '../js';
 
   const mapWidth = 100;
   const mapHeight = (100 / 16) * 9;
 
   let promise;
 
-  const accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
+  // const accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
+  const accessToken = token;
   let map;
   let zoom = $state(9);
   let coords = $state({ lng: 0, lat: 0 });

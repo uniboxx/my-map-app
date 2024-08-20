@@ -32,9 +32,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-        env:
-          GITHUB_TOKEN: ${{ secrets.VITE_MAPBOX_TOKEN}}
-
       - name: install deps
         run: npm install
       - name: build project
