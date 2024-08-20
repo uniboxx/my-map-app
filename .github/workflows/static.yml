@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v4
 
         env:
-          VITE_MAPBOX_TOKEN: ${{ secrets.VITE_MAPBOX_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.VITE_MAPBOX_TOKEN}}
 
       - name: install deps
         run: npm install
