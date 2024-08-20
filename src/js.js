@@ -1,1 +1,1 @@
-export const VITE_MAPBOX_TOKEN='pk.eyJ1IjoidW5pYm94IiwiYSI6ImNscmVvZzgyNDFmejQybHFpOTFvcmRjbzkifQ.okZBC-9f5M4_2Rhzt8qtag'
+export const token='pk.eyJ1IjoidW5pYm94IiwiYSI6ImNscmVvZzgyNDFmejQybHFpOTFvcmRjbzkifQ.okZBC-9f5M4_2Rhzt8qtag'
