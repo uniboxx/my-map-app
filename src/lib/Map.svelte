@@ -208,8 +208,9 @@
       margin: 12px;
       border-radius: 4px;
       font-size: 0.6rem;
-    }
-    @media screen and (min-width: vars.$lg) {
+      @media screen and (min-width: vars.$lg) {
+        font-size: 1.3rem;
+      }
     }
   }
 
