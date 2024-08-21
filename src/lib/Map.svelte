@@ -156,8 +156,10 @@
     getCoordsFromAddress(e.target[0].value);
   }}>
   <h3>Find by address</h3>
-  <label for="address"> Address</label>
-  <input type="text" id="address" name="address" />
+  <div class="field">
+    <label for="address"> Address</label>
+    <input type="text" id="address" name="address" />
+  </div>
   <button class="hide"></button>
 </form>
 <form
@@ -169,10 +171,14 @@
     getAddressFromCoordinates([coords.lng, coords.lat]);
   }}>
   <h3>Find by coordinates</h3>
-  <label for="lng">Longitude</label>
-  <input type="text" id="lng" />
-  <label for="lat">Latitude</label>
-  <input type="text" id="lat" />
+  <div class="field">
+    <label for="lng">Longitude <span>(-180 / 180)</span></label>
+    <input type="text" id="lng" />
+  </div>
+  <div class="field">
+    <label for="lat">Latitude <span>(-90 / 90)</span></label>
+    <input type="text" id="lat" />
+  </div>
 
   <button class="hide"></button>
 </form>
@@ -242,12 +248,43 @@
       text-align: center;
       margin-bottom: 1rem;
     }
+    .field {
+      display: flex;
+      align-items: center;
+      @media screen and (min-width: vars.$lg) {
+        justify-content: center;
+        margin: 0 auto 1rem;
+      }
+      @media screen and (min-width: vars.$lg) {
+        justify-content: center;
+        margin: 0 auto 1rem;
+      }
+      @media screen and (min-width: vars.$xl) {
+        width: 70%;
+      }
+    }
     label,
     input {
       display: inline-block;
       width: 47%;
       margin-bottom: 1rem;
       font-size: 1.3rem;
+    }
+    label {
+      line-height: 1.2;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      @media screen and (min-width: vars.$lg) {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
+    label span {
+      white-space: pre-wrap;
+      font-size: 0.8rem;
+      color: #666;
     }
     input {
       padding: 0.3rem 0.6rem;
@@ -261,17 +298,16 @@
     }
   }
   .addressForm {
-    width: 100%;
-    label,
-    input {
-      display: block;
-      margin: 1rem auto;
-      width: 95%;
+    .field {
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
 
-      font-size: 1.2rem;
-      @media screen and (min-width: vars.$lg) {
-        width: 75%;
+      input {
+        width: 100%;
       }
+    }
+    @media screen and (min-width: vars.$lg) {
     }
   }
 </style>
