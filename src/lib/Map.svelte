@@ -106,6 +106,7 @@
     }
   }
   async function getCoordsFromAddress(address) {
+    if (!address) return;
     try {
       const urlAddress = encodeURI(address);
       console.log(urlAddress);
@@ -146,7 +147,8 @@
   <div class="map" bind:this={container}></div>
 </div>
 <p class="foundAddress">{foundAddress}</p>
-<button onclick={handleMyPositionClick}>Get my position</button>
+<button class="getPosBtn" onclick={handleMyPositionClick}
+  >Get my position</button>
 <form
   class="addressForm"
   onsubmit={e => {
@@ -224,6 +226,7 @@
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 10px;
+    font-size: 1.5rem;
   }
 
   .hide {
