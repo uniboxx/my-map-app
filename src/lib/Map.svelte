@@ -77,6 +77,12 @@
   async function getAddressFromCoordinates(coordinates) {
     try {
       const [lng, lat] = coordinates;
+      if (!lng || !lat)
+        throw new Error('You have to provide both the coordinates');
+      if (lng > 180 || lng < -180)
+        throw new Error('Longitude should be between -180 and 180');
+      if (lat > 90 || lat < -90)
+        throw new Error('Latitude should be between -90 and 90');
       // console.log(lng, lat, 'coords');
       const url = `https://api.mapbox.com/search/geocode/v6/reverse?longitude=${lng}&latitude=${lat}&access_token=${accessToken}`;
       loading = true;
@@ -85,6 +91,10 @@
         throw new Error(`Something went wrong with request❗`);
       }
       const data = await res.json();
+      if (!data.features.length)
+        throw new Error(
+          '❌ No address found for the given latitude and longitude.'
+        );
       const address = data.features[0].properties.full_address;
       foundAddress = address;
       renderMap();
